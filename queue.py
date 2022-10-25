@@ -1,22 +1,19 @@
 class Queue:
     def __init__(self):
         self.list = []
-    
+
     def isempty(self):
         return len(self.list) == 0
-        
-    def enqueue(self, data):
-        newlist = []
-        newlist.append(data)
 
-        # O(n) time complexity and space complexity
-        for i in self.list:
-            newlist.append(i)
-        self.list = newlist        
+    def enqueue(self, data):
+        self.list.insert(0, data)
 
     def dequeue(self):
         # done in O(1) time
         return self.list.pop()
+    
+    def peekNextInLine(self):
+        return self.list[-1]
 
     def getsize(self):
         return len(self.list)
